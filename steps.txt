@@ -1,0 +1,11 @@
+- epel must be enabled 
+- install below packages 
+  - epel-next-relese 
+  - java-1.8.0-openjdk-devel
+  - enabled or installed jenkins repo 
+  - We have done some required modification.
+  - Import key for jenkins installation (As in jenkins repo we have "gpgcheck enabled"
+    rpm --import jenkins-ci.org.key 
+  - install jenkins 
+  - start and enabled jenkins service - jenkins 
+  

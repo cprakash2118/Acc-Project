@@ -1,0 +1,14 @@
+[jenkins]
+centos-7-02.acc.com
+
+[cicd]
+centos-7-02.acc.com 
+
+[sonarqube]
+centos-7-03.acc.com
+
+[maven]
+centos-7-03.acc.com
+
+[myself]
+centos-7-01.acc.com

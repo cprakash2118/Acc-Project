@@ -1,0 +1,66 @@
+---
+- name: Jenkins installation
+  hosts: jenkins 
+  gather_facts: no
+  tasks:
+   - name:  Check jenkins nodes status.
+     ping:
+     register: output_ping
+     ignore_errors: yes
+
+   - name: Check uptime status of the serve.
+     shell: uptime 
+     register: output_uptime
+     ignore_errors: yes
+
+   - name: Check Jenkins servers status -01
+     debug: 
+       var: output_ping
+   - name: Check Jenkins servers status -02
+     debug: 
+       var: output_uptime
+
+   - name: Final status of jenkins server.
+     shell: uname -n 
+     failed_when: 
+          #- output_uptime.rc == 0
+          - output_uptime.rc != 0
+          - output_ping.ping != "pong" 
+   - name: EPEL check 
+     shell: yum repolist
+     
+   - name: Environment setup for jenkins 
+     yum:
+        name: java-1.8.0-openjdk-devel
+        state: present
+
+   - name: enabling jenkins repo
+     copy:
+       src: jenkins.repo
+       dest: /etc/yum.repos.d/jenkins.repo
+   - name: Copy key to jenkins server
+     copy:
+        src: jenkins-ci.org.key
+        dest: /tmp/jenkins-ci.org.key
+ 
+   - name: Import key for jenkins setup 
+     shell: rpm --import /tmp/jenkins-ci.org.key
+  
+   - name: Jenkins installation
+     yum:
+       name: jenkins 
+       state: present
+
+   - name: start and enable jenkins service.
+     service:
+        name: jenkins 
+        enabled: yes
+        state: started  
+
+   - name: Firewall must be configured 
+     firewalld:
+        immediate: yes
+        port: 8080/tcp
+        permanent: yes
+        state: enabled
+...
