@@ -1,6 +1,6 @@
 ---
 - name: Jenkins installation
-  hosts: jenkins 
+  hosts: maven 
   gather_facts: no
   tasks:
    - name:  Check jenkins nodes status.

@@ -1,0 +1,122 @@
+2022-07-07 00:16:43,502 p=5877 u=devops-user-02 n=ansible | PLAY [Jenkins installation] ***************************************************************************************************
+2022-07-07 00:16:43,516 p=5877 u=devops-user-02 n=ansible | TASK [Check jenkins nodes status.] ********************************************************************************************
+2022-07-07 00:16:44,993 p=5877 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 00:16:44,997 p=5877 u=devops-user-02 n=ansible | TASK [Check uptime status of the serve.] **************************************************************************************
+2022-07-07 00:16:45,650 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:16:45,655 p=5877 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -01] ***************************************************************************************
+2022-07-07 00:16:45,766 p=5877 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com] => {
+    "output_ping": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "ping": "pong"
+    }
+}
+2022-07-07 00:16:45,769 p=5877 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -02] ***************************************************************************************
+2022-07-07 00:16:45,878 p=5877 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com] => {
+    "output_uptime": {
+        "changed": true, 
+        "cmd": "uptime", 
+        "delta": "0:00:00.012800", 
+        "end": "2022-07-07 00:16:45.558530", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2022-07-07 00:16:45.545730", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": " 00:16:45 up 2 days,  1:33,  3 users,  load average: 0.03, 0.05, 0.05", 
+        "stdout_lines": [
+            " 00:16:45 up 2 days,  1:33,  3 users,  load average: 0.03, 0.05, 0.05"
+        ]
+    }
+}
+2022-07-07 00:16:45,881 p=5877 u=devops-user-02 n=ansible | TASK [Final status of jenkins server.] ****************************************************************************************
+2022-07-07 00:16:46,392 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:16:46,396 p=5877 u=devops-user-02 n=ansible | TASK [EPEL check] *************************************************************************************************************
+2022-07-07 00:16:48,464 p=5877 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient
+you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 00:16:48,464 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:16:48,467 p=5877 u=devops-user-02 n=ansible | TASK [Environment setup for jenkins] ******************************************************************************************
+2022-07-07 00:17:26,466 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:17:26,471 p=5877 u=devops-user-02 n=ansible | TASK [enabling jenkins repo] **************************************************************************************************
+2022-07-07 00:17:27,972 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:17:27,976 p=5877 u=devops-user-02 n=ansible | TASK [Copy key to jenkins server] *********************************************************************************************
+2022-07-07 00:17:28,932 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:17:28,937 p=5877 u=devops-user-02 n=ansible | TASK [Import key for jenkins setup] *******************************************************************************************
+2022-07-07 00:17:29,517 p=5877 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum, dnf or zypper module rather than running 'rpm'.  If you need to use command because yum,
+dnf or zypper is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to
+get rid of this message.
+
+2022-07-07 00:17:29,517 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:17:29,522 p=5877 u=devops-user-02 n=ansible | TASK [Jenkins installation] ***************************************************************************************************
+2022-07-07 00:19:42,061 p=6177 u=devops-user-02 n=ansible | PLAY [Jenkins installation] ***************************************************************************************************
+2022-07-07 00:19:42,076 p=6177 u=devops-user-02 n=ansible | TASK [Check jenkins nodes status.] ********************************************************************************************
+2022-07-07 00:19:43,511 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:43,516 p=6177 u=devops-user-02 n=ansible | TASK [Check uptime status of the serve.] **************************************************************************************
+2022-07-07 00:19:44,219 p=6177 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 00:19:44,223 p=6177 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -01] ***************************************************************************************
+2022-07-07 00:19:44,326 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com] => {
+    "output_ping": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "ping": "pong"
+    }
+}
+2022-07-07 00:19:44,330 p=6177 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -02] ***************************************************************************************
+2022-07-07 00:19:44,435 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com] => {
+    "output_uptime": {
+        "changed": true, 
+        "cmd": "uptime", 
+        "delta": "0:00:00.008716", 
+        "end": "2022-07-07 00:19:44.121115", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2022-07-07 00:19:44.112399", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": " 00:19:44 up 32 min,  2 users,  load average: 0.72, 0.70, 0.40", 
+        "stdout_lines": [
+            " 00:19:44 up 32 min,  2 users,  load average: 0.72, 0.70, 0.40"
+        ]
+    }
+}
+2022-07-07 00:19:44,439 p=6177 u=devops-user-02 n=ansible | TASK [Final status of jenkins server.] ****************************************************************************************
+2022-07-07 00:19:44,982 p=6177 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 00:19:44,986 p=6177 u=devops-user-02 n=ansible | TASK [EPEL check] *************************************************************************************************************
+2022-07-07 00:19:46,894 p=6177 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient
+you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 00:19:46,895 p=6177 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 00:19:46,899 p=6177 u=devops-user-02 n=ansible | TASK [Environment setup for jenkins] ******************************************************************************************
+2022-07-07 00:19:48,773 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:48,778 p=6177 u=devops-user-02 n=ansible | TASK [enabling jenkins repo] **************************************************************************************************
+2022-07-07 00:19:49,944 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:49,948 p=6177 u=devops-user-02 n=ansible | TASK [Copy key to jenkins server] *********************************************************************************************
+2022-07-07 00:19:50,798 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:50,803 p=6177 u=devops-user-02 n=ansible | TASK [Import key for jenkins setup] *******************************************************************************************
+2022-07-07 00:19:51,376 p=6177 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum, dnf or zypper module rather than running 'rpm'.  If you need to use command because yum,
+dnf or zypper is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to
+get rid of this message.
+
+2022-07-07 00:19:51,377 p=6177 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 00:19:51,381 p=6177 u=devops-user-02 n=ansible | TASK [Jenkins installation] ***************************************************************************************************
+2022-07-07 00:19:52,273 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:52,277 p=6177 u=devops-user-02 n=ansible | TASK [start and enable jenkins service.] **************************************************************************************
+2022-07-07 00:19:53,697 p=6177 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 00:19:53,701 p=6177 u=devops-user-02 n=ansible | TASK [Firewall must be configured] ********************************************************************************************
+2022-07-07 00:19:54,870 p=6177 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 00:19:54,873 p=6177 u=devops-user-02 n=ansible | PLAY RECAP ********************************************************************************************************************
+2022-07-07 00:19:54,873 p=6177 u=devops-user-02 n=ansible | centos-7-02.acc.com        : ok=13   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-07-07 00:28:14,334 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:28:14,339 p=5877 u=devops-user-02 n=ansible | TASK [start and enable jenkins service.] **************************************************************************************
+2022-07-07 00:29:07,763 p=5877 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 00:29:07,767 p=5877 u=devops-user-02 n=ansible | TASK [Firewall must be configured] ********************************************************************************************
+2022-07-07 00:29:09,594 p=5877 u=devops-user-02 n=ansible | fatal: [centos-7-03.acc.com]: FAILED! => {"changed": false, "msg": "can only operate on port, service, rich_rule, masquerade, icmp_block, icmp_block_inversion, interface or source at once"}
+2022-07-07 00:29:09,596 p=5877 u=devops-user-02 n=ansible | PLAY RECAP ********************************************************************************************************************
+2022-07-07 00:29:09,597 p=5877 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=12   changed=9    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
