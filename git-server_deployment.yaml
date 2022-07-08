@@ -1,0 +1,40 @@
+---
+- name: Git Server deployment
+  hosts: git
+  tasks:
+     - name: Installation processes.
+       yum:
+         name: 
+             - curl
+             - policycoreutils-python
+             - openssh-server 
+             - postfix 
+     - name: Start and enable the service.
+       service:
+         name: postfix 
+         state: started 
+         enabled: yes
+
+     - name: Add gitlab repository and install package.
+       shell: curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash
+    
+     - name: Define variables 
+       shell: EXTERNAL_URL="http://gitlab.acc.com"  
+       #shell: EXTERNAL_URL="http://gitlab.acc.com"  yum install -y gitlab-ce 
+
+     - name: INstall gitlab-ce
+       shell: yum install -y gitlab-ce gitlab-cli
+
+     - name: Reconfigure labs to apply the changes.
+       shell: gitlab-ctl reconfigure 
+
+     - name: Firewall must be configured
+       firewalld:
+         immediate: yes
+         port: "{{ item }}"
+         permanent: yes
+         state: enabled
+       loop: 
+            - 80/tcp
+            - 443/tcp
+...

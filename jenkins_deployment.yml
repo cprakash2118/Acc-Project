@@ -48,7 +48,9 @@
   
    - name: Jenkins installation
      yum:
-       name: jenkins 
+       name: 
+          - jenkins 
+          - maven 
        state: present
 
    - name: start and enable jenkins service.

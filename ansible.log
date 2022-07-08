@@ -120,3 +120,190 @@ get rid of this message.
 2022-07-07 00:29:09,594 p=5877 u=devops-user-02 n=ansible | fatal: [centos-7-03.acc.com]: FAILED! => {"changed": false, "msg": "can only operate on port, service, rich_rule, masquerade, icmp_block, icmp_block_inversion, interface or source at once"}
 2022-07-07 00:29:09,596 p=5877 u=devops-user-02 n=ansible | PLAY RECAP ********************************************************************************************************************
 2022-07-07 00:29:09,597 p=5877 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=12   changed=9    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-07-07 04:30:49,620 p=3841 u=devops-user-02 n=ansible | PLAY [Jenkins installation] ***************************************************************************************************
+2022-07-07 04:30:49,633 p=3841 u=devops-user-02 n=ansible | TASK [Check jenkins nodes status.] ********************************************************************************************
+2022-07-07 04:30:51,034 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:30:51,038 p=3841 u=devops-user-02 n=ansible | TASK [Check uptime status of the serve.] **************************************************************************************
+2022-07-07 04:30:51,712 p=3841 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 04:30:51,717 p=3841 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -01] ***************************************************************************************
+2022-07-07 04:30:51,833 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com] => {
+    "output_ping": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": false, 
+        "failed": false, 
+        "ping": "pong"
+    }
+}
+2022-07-07 04:30:51,837 p=3841 u=devops-user-02 n=ansible | TASK [Check Jenkins servers status -02] ***************************************************************************************
+2022-07-07 04:30:51,929 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com] => {
+    "output_uptime": {
+        "changed": true, 
+        "cmd": "uptime", 
+        "delta": "0:00:00.013985", 
+        "end": "2022-07-07 04:30:51.658945", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2022-07-07 04:30:51.644960", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": " 04:30:51 up 49 min,  3 users,  load average: 0.00, 0.01, 0.05", 
+        "stdout_lines": [
+            " 04:30:51 up 49 min,  3 users,  load average: 0.00, 0.01, 0.05"
+        ]
+    }
+}
+2022-07-07 04:30:51,933 p=3841 u=devops-user-02 n=ansible | TASK [Final status of jenkins server.] ****************************************************************************************
+2022-07-07 04:30:52,429 p=3841 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 04:30:52,433 p=3841 u=devops-user-02 n=ansible | TASK [EPEL check] *************************************************************************************************************
+2022-07-07 04:30:54,480 p=3841 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient
+you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 04:30:54,481 p=3841 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 04:30:54,485 p=3841 u=devops-user-02 n=ansible | TASK [Environment setup for jenkins] ******************************************************************************************
+2022-07-07 04:30:56,377 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:30:56,382 p=3841 u=devops-user-02 n=ansible | TASK [enabling jenkins repo] **************************************************************************************************
+2022-07-07 04:30:57,525 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:30:57,530 p=3841 u=devops-user-02 n=ansible | TASK [Copy key to jenkins server] *********************************************************************************************
+2022-07-07 04:30:58,364 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:30:58,368 p=3841 u=devops-user-02 n=ansible | TASK [Import key for jenkins setup] *******************************************************************************************
+2022-07-07 04:30:58,914 p=3841 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum, dnf or zypper module rather than running 'rpm'.  If you need to use command because yum,
+dnf or zypper is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to
+get rid of this message.
+
+2022-07-07 04:30:58,915 p=3841 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 04:30:58,919 p=3841 u=devops-user-02 n=ansible | TASK [Jenkins installation] ***************************************************************************************************
+2022-07-07 04:31:13,201 p=3841 u=devops-user-02 n=ansible | changed: [centos-7-02.acc.com]
+2022-07-07 04:31:13,206 p=3841 u=devops-user-02 n=ansible | TASK [start and enable jenkins service.] **************************************************************************************
+2022-07-07 04:31:14,729 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:31:14,734 p=3841 u=devops-user-02 n=ansible | TASK [Firewall must be configured] ********************************************************************************************
+2022-07-07 04:31:15,803 p=3841 u=devops-user-02 n=ansible | ok: [centos-7-02.acc.com]
+2022-07-07 04:31:15,805 p=3841 u=devops-user-02 n=ansible | PLAY RECAP ********************************************************************************************************************
+2022-07-07 04:31:15,806 p=3841 u=devops-user-02 n=ansible | centos-7-02.acc.com        : ok=13   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-07-07 12:10:25,888 p=9453 u=devops-user-02 n=ansible | playbook: git-server_deployment.yaml
+2022-07-07 12:10:31,121 p=9461 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************************************************************************
+2022-07-07 12:10:31,149 p=9461 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************
+2022-07-07 12:10:34,122 p=9461 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:10:34,135 p=9461 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************************************************************************
+2022-07-07 12:10:35,424 p=9461 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:10:35,437 p=9461 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************************************************************************
+2022-07-07 12:10:36,462 p=9461 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:10:36,476 p=9461 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************************************************************************
+2022-07-07 12:11:51,786 p=9461 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use command because get_url or uri is insufficient you can add
+'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 12:11:51,787 p=9461 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 12:11:51,799 p=9461 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************************************************************************
+2022-07-07 12:50:01,927 p=9461 u=devops-user-02 n=ansible |  [ERROR]: User interrupted execution
+
+2022-07-07 12:50:04,576 p=9965 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************************************************************************
+2022-07-07 12:50:04,588 p=9965 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************
+2022-07-07 12:50:06,671 p=9965 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:50:06,685 p=9965 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************************************************************************
+2022-07-07 12:50:08,299 p=9965 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:50:08,310 p=9965 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************************************************************************
+2022-07-07 12:50:09,218 p=9965 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 12:50:09,230 p=9965 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************************************************************************
+2022-07-07 12:50:33,345 p=9965 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use command because get_url or uri is insufficient you can add
+'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 12:50:33,345 p=9965 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 12:50:33,358 p=9965 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************************************************************************
+2022-07-07 15:01:50,706 p=9965 u=devops-user-02 n=ansible | fatal: [centos-7-03.acc.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Shared connection to centos-7-03.acc.com closed.", "unreachable": true}
+2022-07-07 15:01:50,710 p=9965 u=devops-user-02 n=ansible | PLAY RECAP *********************************************************************************************************************************************************
+2022-07-07 15:01:50,710 p=9965 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=4    changed=1    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-07-07 21:07:39,392 p=4101 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************
+2022-07-07 21:07:39,501 p=4101 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************
+2022-07-07 21:07:43,884 p=4101 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:07:43,914 p=4101 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************
+2022-07-07 21:07:48,420 p=4101 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:07:48,468 p=4101 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************
+2022-07-07 21:07:49,631 p=4101 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:07:49,658 p=4101 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************
+2022-07-07 21:08:51,391 p=4101 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use
+command because get_url or uri is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 21:08:51,392 p=4101 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:08:51,409 p=4101 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************
+2022-07-07 21:23:03,940 p=4101 u=devops-user-02 n=ansible |  [ERROR]: User interrupted execution
+
+2022-07-07 21:24:13,526 p=4967 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************
+2022-07-07 21:24:13,540 p=4967 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************
+2022-07-07 21:24:24,874 p=4967 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:24:24,888 p=4967 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************
+2022-07-07 21:24:29,480 p=4967 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:24:29,492 p=4967 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************
+2022-07-07 21:24:32,397 p=4967 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:24:32,410 p=4967 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************
+2022-07-07 21:25:06,912 p=4967 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use
+command because get_url or uri is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 21:25:06,912 p=4967 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:25:06,928 p=4967 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************
+2022-07-07 21:25:08,807 p=4967 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:25:08,822 p=4967 u=devops-user-02 n=ansible | TASK [INstall gitlab-ce] *******************************************************************************
+2022-07-07 21:25:14,596 p=4967 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because
+yum is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+
+2022-07-07 21:25:14,596 p=4967 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:25:14,609 p=4967 u=devops-user-02 n=ansible | TASK [Reconfigure labs to apply the changes.] **********************************************************
+2022-07-07 21:25:16,676 p=4967 u=devops-user-02 n=ansible | fatal: [centos-7-03.acc.com]: FAILED! => {"changed": true, "cmd": "gitlab-cli reconfigure", "delta": "0:00:00.029152", "end": "2022-07-07 21:25:16.339672", "msg": "non-zero return code", "rc": 127, "start": "2022-07-07 21:25:16.310520", "stderr": "/bin/sh: gitlab-cli: command not found", "stderr_lines": ["/bin/sh: gitlab-cli: command not found"], "stdout": "", "stdout_lines": []}
+2022-07-07 21:25:16,677 p=4967 u=devops-user-02 n=ansible | PLAY RECAP *********************************************************************************************
+2022-07-07 21:25:16,678 p=4967 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=6    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-07-07 21:27:14,481 p=5092 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************
+2022-07-07 21:27:14,494 p=5092 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************
+2022-07-07 21:27:19,943 p=5092 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:27:19,957 p=5092 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************
+2022-07-07 21:27:23,423 p=5092 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:27:23,435 p=5092 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************
+2022-07-07 21:27:25,934 p=5092 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:27:25,948 p=5092 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************
+2022-07-07 21:27:56,747 p=5092 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use
+command because get_url or uri is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 21:27:56,747 p=5092 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:27:56,760 p=5092 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************
+2022-07-07 21:27:58,487 p=5092 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:27:58,501 p=5092 u=devops-user-02 n=ansible | TASK [INstall gitlab-ce] *******************************************************************************
+2022-07-07 21:28:09,742 p=5092 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because
+yum is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+
+2022-07-07 21:28:09,743 p=5092 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:28:09,756 p=5092 u=devops-user-02 n=ansible | TASK [Reconfigure labs to apply the changes.] **********************************************************
+2022-07-07 21:28:12,032 p=5092 u=devops-user-02 n=ansible | fatal: [centos-7-03.acc.com]: FAILED! => {"changed": true, "cmd": "gitlab-cli reconfigure", "delta": "0:00:00.018044", "end": "2022-07-07 21:28:11.806132", "msg": "non-zero return code", "rc": 127, "start": "2022-07-07 21:28:11.788088", "stderr": "/bin/sh: gitlab-cli: command not found", "stderr_lines": ["/bin/sh: gitlab-cli: command not found"], "stdout": "", "stdout_lines": []}
+2022-07-07 21:28:12,034 p=5092 u=devops-user-02 n=ansible | PLAY RECAP *********************************************************************************************
+2022-07-07 21:28:12,034 p=5092 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=6    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-07-07 21:32:40,483 p=5337 u=devops-user-02 n=ansible | PLAY [Git Server deployment] ***************************************************************************
+2022-07-07 21:32:40,497 p=5337 u=devops-user-02 n=ansible | TASK [Gathering Facts] *********************************************************************************
+2022-07-07 21:32:49,521 p=5337 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:32:49,535 p=5337 u=devops-user-02 n=ansible | TASK [Installation processes.] *************************************************************************
+2022-07-07 21:33:02,923 p=5337 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:33:02,952 p=5337 u=devops-user-02 n=ansible | TASK [Start and enable the service.] *******************************************************************
+2022-07-07 21:33:13,266 p=5337 u=devops-user-02 n=ansible | ok: [centos-7-03.acc.com]
+2022-07-07 21:33:13,279 p=5337 u=devops-user-02 n=ansible | TASK [Add gitlab repository and install package.] ******************************************************
+2022-07-07 21:33:47,835 p=5337 u=devops-user-02 n=ansible | [WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use
+command because get_url or uri is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2022-07-07 21:33:47,836 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:33:47,849 p=5337 u=devops-user-02 n=ansible | TASK [Define variables] ********************************************************************************
+2022-07-07 21:33:50,714 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:33:50,729 p=5337 u=devops-user-02 n=ansible | TASK [INstall gitlab-ce] *******************************************************************************
+2022-07-07 21:34:01,450 p=5337 u=devops-user-02 n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because
+yum is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+
+2022-07-07 21:34:01,450 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:34:01,462 p=5337 u=devops-user-02 n=ansible | TASK [Reconfigure labs to apply the changes.] **********************************************************
+2022-07-07 21:36:12,568 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com]
+2022-07-07 21:36:12,579 p=5337 u=devops-user-02 n=ansible | TASK [Firewall must be configured] *********************************************************************
+2022-07-07 21:36:18,801 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com] => (item=80/tcp)
+2022-07-07 21:36:21,298 p=5337 u=devops-user-02 n=ansible | changed: [centos-7-03.acc.com] => (item=443/tcp)
+2022-07-07 21:36:21,307 p=5337 u=devops-user-02 n=ansible | PLAY RECAP *********************************************************************************************
+2022-07-07 21:36:21,307 p=5337 u=devops-user-02 n=ansible | centos-7-03.acc.com        : ok=8    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

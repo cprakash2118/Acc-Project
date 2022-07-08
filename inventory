@@ -8,6 +8,9 @@ centos-7-02.acc.com
 centos-7-03.acc.com
 
 [maven]
+centos-7-02.acc.com
+
+[git]
 centos-7-03.acc.com
 
 [myself]
