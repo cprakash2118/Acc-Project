@@ -28,6 +28,10 @@
      - name: Reconfigure labs to apply the changes.
        shell: gitlab-ctl reconfigure 
 
+     - name: Reconfigure labs and restart
+       shell: gitlab-ctl restart
+
+
      - name: Firewall must be configured
        firewalld:
          immediate: yes
